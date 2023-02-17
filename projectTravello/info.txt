@@ -1,0 +1,3 @@
+virtual environment: VirEnvTask1
+project name: projectTask1
+app name: appTask1

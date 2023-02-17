@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="{% static 'css_user_reg/bootstrap.min.css' %}" rel="stylesheet">
+<title>User Registration</title>
+</head>
+
+<body class="bg-light">
+ <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{% static 'logo_user_reg.jpg' %}" alt="" width="72" height="72">
+    <h2>User Registration Form</h2>
+  </div>
+ </div>
+{% for msg in messages %}
+<p style="text-align:center; color:red; font-size:150%">{{msg}}</p>
+{% endfor %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+     <form action="user_reg" method="post">
+       {% csrf_token %}
+     <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Jem" required><br>
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Jem" required>
+    </div>
+     
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Jem@email.com" aria-describedby="emailHelp">
+  </div>
+  
+  <div class="form-group">
+    <label for="user_name">Username </label>
+    <input type="text" class="form-control" id="user_name" name="username" >
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password </label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+  <div class="form-group">
+    <label for="conf_password">Confirm Password </label>
+    <input type="password" class="form-control" id="conf_password" name="conf_password">
+  </div>
+
+<hr class="mb-4">
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button><br>
+  </form>
+    </div>
+  </div>
+     <a href="/"><button class="btn btn-primary btn-lg btn-block">Home</button></a>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2022-2023 Travello</p>
+  </footer>
+  </div>
+</body>
+</html>
